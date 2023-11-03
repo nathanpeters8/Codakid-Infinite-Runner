@@ -20,8 +20,26 @@ function spawnEnemy() {
     var speedy = new Speed(y);
   }
 
+  // increase how often enemies spawn over time
+  var time;
+  if(game.score < 15) {
+    time = 3000;
+  }
+  else if(game.score < 30) {
+    time = 2500;
+  }
+  else if(game.score < 45) {
+    time = 2000;
+  }
+  else if(game.score < 60) {
+    time = 1500;
+  }
+  else {
+    time = 1000;
+  }
   // set a timer
-  game.time.events.add(3000, spawnEnemy, this);
+  game.time.events.add(time, spawnEnemy, this);
+  console.log(time);
 
   // var newEnemy = new Enemy(x, y, speed, image);
 }
