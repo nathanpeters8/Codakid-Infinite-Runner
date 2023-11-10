@@ -35,7 +35,13 @@ Enemy.prototype.update = function() {
 
     //check if enemy collides with player
     if(checkCollision(this, player)) {
-        gameOver();
+        if(player.safe){
+            player.stopShield();
+            this.destroy();
+        }
+        else {
+            gameOver();
+        }
     }
 }
 

@@ -18,4 +18,15 @@ function makePlayer() {
       this.frame = 1;
     }
   };
+
+  // player shield function
+  player.shield = function() {
+    this.tint = 0x2b48ff;
+    this.safe = true;
+  }
+
+  player.stopShield = function() {
+    this.tint = 0xFFFFFF;
+    this.safe = false;
+  }
 }

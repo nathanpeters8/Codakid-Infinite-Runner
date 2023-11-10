@@ -21,6 +21,10 @@ function preload() {
 
   // load image for coins
   game.load.image('coin', 'assets/pickups/coin4.png');
+
+  // powerup images
+  game.load.image('shield', 'assets/pickups/powerup2.png');
+  game.load.image('magnet', 'assets/pickups/powerup1.png');
 }
 
 //Do all of your initial setup
@@ -38,6 +42,9 @@ function create() {
 
   // spawn coins
   spawnCoins();
+
+  // spawn powerups
+  spawnPowerups();
 
   //game over text
   game.gameOverText = game.add.bitmapText(game.world.centerX, game.world.centerY, "font", "Game Over\nTap To Restart");

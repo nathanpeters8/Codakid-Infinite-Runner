@@ -110,3 +110,13 @@ function spawnCoins() {
   // start timer to reset function
   game.time.events.add(5000, spawnCoins, this);
 }
+
+// spawn powerups over time 
+function spawnPowerups() {
+  var randY = game.rnd.between(50, 590);
+  var powerup = new Shield(1000, randY);
+
+  // set up spawn timer
+  var time = game.rnd.between(7500, 15000);
+  game.time.events.add(time, spawnPowerups, this);
+}
